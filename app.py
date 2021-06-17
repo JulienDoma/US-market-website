@@ -97,7 +97,11 @@ if st.sidebar.button('Go !'):
     
     if results.iloc[:1]['yhat'].values[0] < results.iloc[-1:]['yhat'].values[0] :
         image = Image.open('soleil.png')
-        st.sidebar.image(image, caption="Il va faire beau, c'est le moment d'acheter !", output_format='png')
+        st.sidebar.image(image, caption="", output_format='png')
+        original_title = '<p style="font-family:Arial; color:white; font-size: 20px;">Il va faire beau, c\'est le moment d\'acheter !</p>'
+        st.sidebar.markdown(original_title, unsafe_allow_html=True)
     else:
         image = Image.open('pluie.png')
-        st.sidebar.image(image, caption="Il va pleuvoir, c'est le moment de vendre !", output_format='png')
+        st.sidebar.image(image, caption="", output_format='png')
+        original_title = '<p style="font-family:Arial; color:white; font-size: 20px;">Il va pleuvoir, c\'est le moment de vendre !</p>'
+        st.sidebar.markdown(original_title, unsafe_allow_html=True)
